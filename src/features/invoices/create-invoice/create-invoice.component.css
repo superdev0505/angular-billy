@@ -1,0 +1,10 @@
+.heading,
+.footer {
+  align-items: center;
+  display: flex;
+  margin: 2.5rem auto;
+}
+
+.invoice-btns {
+  margin-left: auto;
+}

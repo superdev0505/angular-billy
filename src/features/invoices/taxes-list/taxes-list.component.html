@@ -1,0 +1,33 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead class="table-headers thead-default">
+      <th>Name</th>
+      <th>Rate</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tax of taxes" class="tax">
+        <td class="tax-name"><strong>{{ tax.name }}</strong></td>
+        <td>{{ tax.rate }} %</td>
+        <td class="invoice-actions">
+          <btn type="link" class="edit-action" (onClick)="handleTaxEdit(tax.id)">Edit</btn>
+          <btn type="link" class="delete-action" (onClick)="handleTaxDelete(tax.id)">Delete</btn>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<modal
+  *ngIf="isEditing"
+  [isVisible]="isEditing"
+  [disabled]="!form.valid"
+  (onClose)="handleCancel()"
+  (onSuccess)="handleEditEnd()"
+>
+  <modal-title>Edit tax</modal-title>
+  <modal-body>
+    <form [formGroup]="form">
+      <field *ngFor="let field of fields" [form]="form" [field]="field"></field>
+    </form>
+  </modal-body>
+</modal>

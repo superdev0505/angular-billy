@@ -1,0 +1,17 @@
+<modal
+  *ngIf="form"
+  [isVisible]="!!mode"
+  [disabled]="!form.valid"
+  (onClose)="handleCancel()"
+  (onSuccess)="handleEditEnd()"
+>
+  <modal-title>
+    <span *ngIf="mode === 'adding'">Add a new customer</span>
+    <span *ngIf="mode === 'editing'">Edit customer</span>
+  </modal-title>
+  <modal-body>
+    <form [formGroup]="form">
+      <field *ngFor="let field of fields" [form]="form" [field]="field"></field>
+    </form>
+  </modal-body>
+</modal>

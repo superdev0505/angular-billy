@@ -1,0 +1,21 @@
+<div class="modal in" *ngIf="isVisible" [style.display]="'block'">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="close()">
+          <span>&times;</span>
+        </button>
+        <h4 class="modal-title">
+          <ng-content select="modal-title"></ng-content>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <ng-content select="modal-body"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="close()">Close</button>
+        <button [disabled]="disabled" class="btn btn-primary" (click)="success()">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

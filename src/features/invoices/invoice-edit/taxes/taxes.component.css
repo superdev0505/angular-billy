@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  text-align: right;
+}
+
+.tax {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  &-name {
+    flex-basis: 100%;
+    white-space: nowrap;
+  }
+
+  &-rate {
+    margin-left: auto;
+  }
+
+  &-name,
+  &-rate,
+  &-amount {
+    padding: .75rem;
+  }
+
+  &-rate {
+    box-sizing: content-box;
+    flex-basis: 10%;
+    min-width: 7.5rem;
+    text-align: center;
+  }
+
+  &-amount {
+    flex-basis: 15%;
+    min-width: 7rem;
+    text-align: left;
+  }
+}
+
+@media (--tablet) {
+  .tax {
+    flex-wrap: initial;
+
+    &-name {
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+  }
+}
+
+.delete-btn {
+  color: var(--accent);
+  cursor: pointer;
+  margin-right: .5rem;
+}
+
+.tax-select {
+  display: block;
+  margin-top: 1rem;
+}

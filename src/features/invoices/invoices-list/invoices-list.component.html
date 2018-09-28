@@ -1,0 +1,34 @@
+<h2>Invoices</h2>
+<div class="table-responsive">
+  <table class="table">
+    <thead class="table-headers thead-default">
+      <th>Number</th>
+      <th>Date</th>
+      <th>Customer</th>
+      <th>Total</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let invoice of invoices$ | async" class="invoice">
+        <td>{{ invoice.number }}</td>
+        <td>{{ invoice.date }}</td>
+        <td>{{ invoice.customer.name }}</td>
+        <td>
+          {{ invoice.total | currency:'EUR' }}
+        </td>
+        <td class="invoice-actions">
+          <btn type="link" class="edit-action" (onClick)="handleInvoiceEdit(invoice.id)">Edit</btn>
+          <btn type="link" class="delete-action" (onClick)="handleInvoiceDelete(invoice.id)">Delete</btn>
+          <btn type="link" class="edit-action" (onClick)="handleInvoicePrint(invoice.id)">Print</btn>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>All taxes</h4>
+<taxes-list
+  [taxes]="taxes$ | async"
+  (onEditTax)="handleTaxEdit($event)"
+  (onDeleteTax)="handleTaxDelete($event)"
+></taxes-list>

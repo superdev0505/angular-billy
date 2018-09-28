@@ -1,0 +1,31 @@
+<div class="customer">
+  <div *ngIf="!selectedCustomer">
+    <select-list
+      (onChange)="handleSelectCustomer($event)"
+      [options]="customers"
+      [addOption]="true"
+      addOptionText="Or add a new customer"
+      defaultText="Select a customer"
+    >
+    </select-list>
+  </div>
+
+  <div *ngIf="selectedCustomer">
+    <p><span class="name">{{ selectedCustomer.name }}</span></p>
+    <p>{{ selectedCustomer.address }}</p>
+    <p>
+      <span>{{ selectedCustomer.zip }}</span>
+      <span>{{ selectedCustomer.city }}</span>
+      <span [hidden]="!selectedCustomer.province">({{ selectedCustomer.province }})</span>
+    </p>
+    <p>VAT {{ selectedCustomer.vat }}</p>
+    <btn type="link" (onClick)="handleEditCustomer()">Edit customer</btn> •
+    <btn type="link" (onClick)="handleRemoveCustomer()">Remove</btn>
+  </div>
+  <customer-edit
+    [mode]="mode"
+    [customer]="mode === 'adding' ? { id: '', name: '' } : selectedCustomer"
+    (onCancel)="closeModal($event)"
+    (onEditEnd)="handleEditCustomerEnd($event)"
+  ></customer-edit>
+</div>

@@ -1,0 +1,34 @@
+.container {
+  min-height: calc(100vh - 11rem);
+}
+
+/deep/ .simple-notification-wrapper {
+  width: 25rem !important;
+}
+
+/deep/ .simple-notification-wrapper .simple-notification {
+  background-color: #fff !important;
+  box-shadow: 0 1px 8px var(--divider);
+  color: #444;
+}
+
+/deep/ .simple-notification-wrapper .simple-notification .sn-title {
+  font-size: 1.25rem;
+  line-height: 1.75;
+}
+
+/deep/ .simple-notification-wrapper .simple-notification.success {
+  border-left: 4px solid var(--success);
+
+  & svg {
+    fill: var(--success);
+  }
+}
+
+/deep/ .simple-notification-wrapper .simple-notification.error {
+  border-left: 4px solid var(--danger);
+
+  & svg {
+    fill: var(--danger);
+  }
+}

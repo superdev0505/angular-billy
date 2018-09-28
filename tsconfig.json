@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": ["es5", "dom", "es2015", "dom.iterable", "scripthost"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noLib": false,
+        "skipLibCheck": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "es5",
+        "baseUrl": ".",
+        "paths": {
+          "@services/*": ["src/services/*"],
+          "@test/*": ["src/test/*"],
+          "@utils/*": ["src/utils/*"]
+        }
+    },
+    "exclude": [
+        "dist",
+        "node_modules",
+        "src/**/*.spec.ts"
+    ],
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}

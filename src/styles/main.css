@@ -1,0 +1,55 @@
+body {
+  color: var(--primary-text);
+}
+
+a {
+  cursor: pointer;
+
+  @nest &:not([href]):not([tabindex]) {
+    color: var(--dark-primary);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 1rem 0;
+}
+
+p {
+  margin-bottom: .5rem;
+}
+
+/**
+ * Bootstrap overrides
+ */
+
+.btn {
+  cursor: pointer;
+}
+
+.table-headers {
+  color: var(--divider);
+  text-transform: uppercase;
+}
+
+.form-control--inline {
+  display: inline-block;
+  width: auto;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.text-md {
+  font-size: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+}

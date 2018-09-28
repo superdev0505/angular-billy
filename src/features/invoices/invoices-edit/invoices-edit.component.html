@@ -1,0 +1,47 @@
+<div class="heading">
+  <h2 class="title">Edit invoice</h2>
+  <div class="invoice-btns">
+    <btn class="print-btn" type="secondary" (onClick)="handlePrint()">
+      <icon name="printer"></icon>
+      Print
+    </btn>
+    <btn class="save-btn" type="primary" (onClick)="handleSave()">
+      <icon name="database"></icon>
+      Save
+    </btn>
+  </div>
+</div>
+<invoice-edit
+  *ngIf="invoice"
+  [customers]="customers"
+  [invoice]="invoice"
+  [availableTaxes]="availableTaxes"
+  (onBusinessChange)="handleBusinessChange($event)"
+  (onAddCustomer)="handleAddCustomer($event)"
+  (onEditCustomer)="handleEditCustomer($event)"
+  (onRemoveCustomer)="handleRemoveCustomer($event)"
+  (onSelectCustomer)="handleSelectCustomer($event)"
+  (onEditLocation)="handleEditLocation($event)"
+  (onEditDate)="handleEditDate($event)"
+  (onEditNumber)="handleEditNumber($event)"
+  (onAddTask)="handleAddTask($event)"
+  (onEditTask)="handleEditTask($event)"
+  (onRemoveTask)="handleRemoveTask($event)"
+  (onAddTax)="handleAddTax($event)"
+  (onAddInvoiceTax)="handleAddInvoiceTax($event)"
+  (onEditTax)="handleEditTax($event)"
+  (onRemoveTax)="handleRemoveTax($event)"
+  (onNotesChange)="handleNotesChange($event)"
+></invoice-edit>
+<div class="footer">
+  <div class="invoice-btns">
+    <btn class="print-btn" type="secondary" (onClick)="handlePrint()">
+      <icon name="printer"></icon>
+      Print
+    </btn>
+    <btn class="save-btn" type="primary" (onClick)="handleSave()">
+      <icon name="database"></icon>
+      Save
+    </btn>
+  </div>
+</div>

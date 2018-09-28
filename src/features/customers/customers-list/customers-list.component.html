@@ -1,0 +1,44 @@
+<h3>My customers</h3>
+<div class="table-responsive">
+  <table class="table">
+    <thead class="table-headers thead-default">
+      <th>Name</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers" class="customer">
+        <td class="customer-name">
+          <btn
+            type="link"
+            class="customer-name"
+            (onClick)="handleCustomerEdit(customer.id)"
+          >
+            {{ customer.name }}
+          </btn>
+        </td>
+        <td>
+          <btn
+            type="link"
+            class="edit-action"
+            (onClick)="handleCustomerEdit(customer.id)"
+          >
+            Edit
+          </btn>
+          <btn
+            type="link"
+            class="delete-action"
+            (onClick)="handleCustomerDelete(customer.id)"
+          >
+            Delete
+          </btn>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<customer-edit
+  [mode]="isEditing ? 'editing' : null"
+  [customer]="editingCustomer"
+  (onCancel)="this.endEdit($event)"
+  (onEditEnd)="this.handleEditEnd($event)"
+></customer-edit>

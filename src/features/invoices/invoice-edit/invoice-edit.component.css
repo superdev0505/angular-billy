@@ -1,0 +1,23 @@
+.invoice-date-number {
+  margin: 5rem 0 3rem;
+}
+
+.invoice-number {
+  font-size: 1.5rem;
+}
+
+.taxes {
+  display: block;
+  margin: 2rem 0;
+}
+
+.invoice {
+  border: 1px solid var(--divider);
+  border-radius: 3px;
+  padding: 1.25rem;
+}
+
+.invoice-total {
+  font-size: 1.25rem;
+  text-align: right;
+}
