@@ -77,10 +77,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jiayihu/billy.git"
+    "url": "git+https://github.com/superdev0505/billy.git"
   },
   "bugs": {
-    "url": "https://github.com/jiayihu/billy/issues"
+    "url": "https://github.com/jiayihu/superdev0505/issues"
   },
-  "homepage": "https://github.com/jiayihu/billy#readme"
+  "homepage": "https://github.com/superdev0505/billy#readme"
 }
